@@ -1,0 +1,37 @@
+:root {
+  --main-blue-color: #072ac8;
+  --secondary-blue-color: #43d2ff;
+  --secondary-blue-color-2: #a2d6f9;
+  --secondary-blue-color-3: #d1edff;
+
+  --main-grey-color: #292e47;
+  --secondary-grey-color: #6b708d;
+  --secondary-grey-color-2: #f2f4fc;
+  --secondary-grey-color-3: #ecf7ff;
+
+  --main-yellow-color: #ffc600;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.h1-heading {
+  size: 60px;
+  font-weight: bold;
+  color: var(--secondary-grey-color);
+}
+
+.h2-heading {
+  size: 50px;
+  font-weight: bold;
+  color: var(--secondary-grey-color);
+}
+.h3-heading {
+  size: 40px;
+  font-weight: bold;
+  color: var(--secondary-grey-color);
+}
+.h4-heading {
+  size: 24px;
+  font-weight: bold;
+  color: var(--secondary-grey-color);
+}

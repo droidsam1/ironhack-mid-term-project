@@ -1,0 +1,32 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #e5e5e5;
+}
+.navbar {
+  width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar__list {
+  list-style: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar__list li {
+  padding: 0rem 2rem;
+  color: var(--secondary-grey-color);
+}
+
+.navbar__contact-button {
+  background-color: var(--main-blue-color);
+  padding: .75rem 2rem;
+  color: white;
+}
