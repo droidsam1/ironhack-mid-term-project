@@ -11,27 +11,58 @@
 
   --main-yellow-color: #ffc600;
 
+  --max-width: 1200px;
   font-family: "Roboto", sans-serif;
 }
 
 .h1-heading {
-  size: 60px;
+  font-size: 60px;
   font-weight: bold;
   color: var(--secondary-grey-color);
 }
 
 .h2-heading {
-  size: 50px;
+  font-size: 50px;
   font-weight: bold;
   color: var(--secondary-grey-color);
 }
 .h3-heading {
-  size: 40px;
+  font-size: 40px;
   font-weight: bold;
   color: var(--secondary-grey-color);
 }
 .h4-heading {
-  size: 24px;
+  font-size: 24px;
   font-weight: bold;
   color: var(--secondary-grey-color);
+}
+
+.text-medium {
+  font-size: 24px;
+  font-weight: 600;
+}
+.text-regular {
+  font-size: 20px;
+  font-weight: 400;
+}
+.black {
+  color: black;
+}
+.secondary-grey {
+  color: var(--secondary-grey-color);
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+.rectangular-main-button {
+  background-color: var(--main-blue-color);
+  padding: 0.75rem 2rem;
+  color: white;
+  text-decoration: none;
+}
+.rectangular-secondary-button {
+  color: var(--secondary-grey-color);
+  padding: 0.75rem 2rem;
+  text-decoration: none;
 }

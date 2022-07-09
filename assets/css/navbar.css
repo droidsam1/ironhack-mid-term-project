@@ -25,8 +25,41 @@ body {
   color: var(--secondary-grey-color);
 }
 
-.navbar__contact-button {
-  background-color: var(--main-blue-color);
-  padding: .75rem 2rem;
-  color: white;
+@media only screen and (max-width: 700px) {
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    width: 80%;
+  }
+
+  .navbar__list {
+    display: none;
+  }
+
+  #contat-us {
+    display: none;
+  }
+
+  #navbar__menu {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient(
+      to bottom,
+      black,
+      black 20%,
+      #e5e5e5 20%,
+      #e5e5e5 40%,
+      black 40%,
+      black 60%,
+      #e5e5e5 60%,
+      #e5e5e5 80%,
+      black 80%,
+      black 100%
+    );
+  }
 }
