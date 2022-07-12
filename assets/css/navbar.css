@@ -24,6 +24,9 @@ body {
   padding: 0rem 2rem;
   color: var(--secondary-grey-color);
 }
+.navbar__list__link {
+  text-decoration: none;
+}
 
 @media only screen and (max-width: 700px) {
   .navbar {
