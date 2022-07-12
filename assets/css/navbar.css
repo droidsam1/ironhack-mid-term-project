@@ -40,12 +40,12 @@
   }
 
   #navbar__menu {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     display: block;
     border: none;
     padding: 0px;
-    margin: 20px;
+    margin: 15px;
     background: linear-gradient(
       to bottom,
       black,

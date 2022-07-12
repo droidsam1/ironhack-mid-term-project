@@ -19,6 +19,7 @@
 }
 .hero-section__hero-image {
   max-width: calc(var(--max-width) / 2);
+  min-width: 20rem;
   width: 100%;
   position: relative;
   top: 0;
@@ -54,4 +55,11 @@
   .hero-section__images {
     margin-top: 15%;
   }
+}
+
+@media only screen and (max-width: 400px) {
+  .hero-section {
+    margin: 1%;
+  }
+
 }
