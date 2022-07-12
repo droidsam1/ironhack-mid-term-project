@@ -1,0 +1,16 @@
+.client-section {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5%;
+  margin: 6rem auto;
+  justify-content: space-around;
+}
+
+.client-section img {
+  padding: 2rem;
+  filter: grayscale(1);
+}
+
+.client-section img:hover {
+  filter: grayscale(0);
+}
