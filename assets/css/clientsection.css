@@ -5,11 +5,29 @@
   justify-content: space-between;
 }
 
-.client-section img {
+.client-section__logo {
   padding: 2rem;
   filter: grayscale(1);
+  flex-basis: calc(1 / 5);
 }
 
-.client-section img:hover {
+.client-section__logo:hover {
   filter: grayscale(0);
+}
+
+@media only screen and (max-width: 868px) {
+  .client-section {
+    justify-content: space-around;
+    flex-basis: 100%;
+  }
+
+  .client-section__logo {
+    display: flex;
+    justify-content: center;
+    flex-basis: 30%;
+  }
+
+  .client-section__logo:nth-last-child(1):nth-child(odd) {
+    display: none;
+  }
 }
