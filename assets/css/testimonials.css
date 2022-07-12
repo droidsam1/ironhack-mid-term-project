@@ -1,0 +1,89 @@
+.testimonials-section {
+  background-color: var(--main-grey-color);
+  background-image: url(/assets/testimonials-section/orbit.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: relative;
+  min-height: 42rem;
+
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.testimonials-section h3 {
+  text-align: center;
+  color: white;
+  max-width: 400px;
+}
+
+.testimonials-section__profile {
+  display: flex;
+  align-items: center;
+}
+
+.testimonials-section__profile-image {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  margin: 0.5rem;
+}
+
+.testimonials-section__profile__name {
+  color: var(--secondary-blue-color-2);
+}
+
+.testimonials-section__profile__company {
+  color: var(--secondary-grey-color-2);
+}
+
+.testimonials-section__testimonial {
+  color: var(--main-yellow-color);
+  width: 60%;
+  text-align: center;
+}
+
+.testimonials-section__icon {
+  max-width: 10rem;
+  width: 15%;
+}
+
+.testimonials-section__icon:nth-child(1) {
+  position: absolute;
+  left: 8%;
+  top: 10%;
+}
+
+.testimonials-section__icon:nth-child(2) {
+  position: absolute;
+  left: 79%;
+  top: 10%;
+}
+
+.testimonials-section__icon:nth-child(3) {
+  position: absolute;
+  left: 8%;
+  top: 70%;
+}
+
+.testimonials-section__icon:nth-child(4) {
+  position: absolute;
+  left: 79%;
+  top: 70%;
+}
+
+@media only screen and (max-width: 800px) {
+  .testimonials-section__icon {
+    display: none;
+  }
+}
