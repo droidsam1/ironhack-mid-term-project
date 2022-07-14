@@ -1,0 +1,39 @@
+.cta-section {
+  background-color: var(--main-yellow-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 25rem;
+}
+
+.cta-section__mail {
+  margin-top: 3rem;
+}
+
+.cta-section__mail-input {
+  background: url(/assets/newsletter/icon/mail.svg) no-repeat 30px;
+  background-color: white;
+  padding: 1.75rem 5rem;
+  border: none;
+}
+
+.cta-section__subscribe-button {
+  border: none;
+  padding: 1.75rem 5rem;
+}
+
+@media only screen and (max-width: 700px) {
+  .cta-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-section__mail {
+    display: flex;
+    flex-direction: column;
+  }
+  .cta-section__subscribe-button {
+    margin-top: 1rem;
+  }
+}

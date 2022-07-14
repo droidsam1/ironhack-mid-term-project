@@ -60,6 +60,9 @@ body {
 .black {
   color: black;
 }
+.main-grey {
+  color: var(--main-grey-color);
+}
 .secondary-grey {
   color: var(--secondary-grey-color);
 }
@@ -81,10 +84,18 @@ body {
 
 @media only screen and (max-width: 1100px) {
   html {
-    padding: 1rem;
+    padding: 0;
   }
 
   .h1-heading {
     font-size: 40px;
+  }
+
+  .h2-heading {
+    font-size: 35px;
+  }
+
+  .h3-heading {
+    font-size: 30px;
   }
 }
