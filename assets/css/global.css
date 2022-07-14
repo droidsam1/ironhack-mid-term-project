@@ -99,3 +99,10 @@ body {
     font-size: 30px;
   }
 }
+
+@media only screen and (max-width: 400px) {
+  .rectangular-main-button,
+  .rectangular-secondary-button {
+    padding: 0.5rem 1rem;
+  }
+}

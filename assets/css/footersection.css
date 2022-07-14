@@ -1,6 +1,7 @@
 .footer-section {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .footer-section > div {
@@ -19,6 +20,7 @@
 }
 
 .footer-section__links {
+  padding-left: 0;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

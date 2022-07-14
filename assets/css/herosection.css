@@ -19,8 +19,7 @@
 }
 .hero-section__hero-image {
   max-width: calc(var(--max-width) / 2);
-  min-width: 20rem;
-  width: 100%;
+  width: 90%;
   position: relative;
   top: 0;
   left: 0;
@@ -62,4 +61,13 @@
     margin: 1%;
   }
 
+  .hero-section__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-section__bottom-card,
+  .hero-section__top-card {
+    display: none;
+  }
 }

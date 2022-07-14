@@ -29,11 +29,25 @@
     flex-direction: column;
   }
 
+  .cta-section h3 {
+    text-align: center;
+  }
+
   .cta-section__mail {
     display: flex;
     flex-direction: column;
   }
   .cta-section__subscribe-button {
     margin-top: 1rem;
+  }
+
+  .cta-section__mail-input {
+    background: url(/assets/newsletter/icon/mail.svg) no-repeat 10px;
+    background-color: white;
+    background-size: 15px;
+    padding: 1rem 2rem;
+  }
+  .cta-section__subscribe-button {
+    padding: 1rem 2rem;
   }
 }

@@ -27,8 +27,7 @@
   .navbar {
     justify-content: space-between;
     align-items: center;
-    margin: auto;
-    width: 80%;
+    width: 100%;
   }
 
   .navbar__list {

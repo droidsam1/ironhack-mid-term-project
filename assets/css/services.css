@@ -45,10 +45,19 @@
     display: flex;
     flex-direction: column;
   }
-  .services-section h3{
+  .services-section h3 {
     text-align: center;
   }
   .services-section__cards__card {
     padding: 2rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .services-section__cards__card__icon {
+    width: 25px;
+    height: 25px;
+  }
+  .services-section__cards__card__icon img {
+    width: 20px;
   }
 }
