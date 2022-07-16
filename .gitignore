@@ -105,3 +105,6 @@ dist
 
 # Local Netlify folder
 .netlify
+
+# TypeScript build output
+ts-out/
