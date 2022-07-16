@@ -1,3 +1,11 @@
+.services-section{
+  margin: 10rem 0;
+}
+
+.services-section>h3{
+  margin: 2rem;
+}
+
 .services-section__cards {
   display: flex;
 }

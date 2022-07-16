@@ -4,7 +4,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 25rem;
+  min-height: 30rem;
+  margin: 10rem 0;
 }
 
 .cta-section__mail {
