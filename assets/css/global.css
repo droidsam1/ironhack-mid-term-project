@@ -132,6 +132,7 @@ body {
 
 .cards__card__image {
   width: 100%;
+  min-height: 15rem;
 }
 
 .cards__card-with-image {
