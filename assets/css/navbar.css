@@ -19,8 +19,18 @@
   padding: 0rem 2rem;
   color: var(--secondary-grey-color);
 }
+
+.navbar__list li .active {
+  color: var(--main-blue-color);
+}
+
 .navbar__list__link {
+  color: var(--secondary-grey-color);
   text-decoration: none;
+}
+
+.navbar__list__link:hover {
+  color: var(--secondary-blue-color);
 }
 
 @media only screen and (max-width: 700px) {
