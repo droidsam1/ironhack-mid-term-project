@@ -8,16 +8,16 @@ export async function getPostById(postId: number) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      query: `{
-            post(id: $id)  {
-              id,
-              title,
-              description,
-              body,
-              cover
-            }
-          }`,
-      variables: { id: postId },
+      query: `query ($postId: Int!) {
+        post(id: $postId) {
+          id
+          title
+          description
+          body
+          cover
+        }
+      }`,
+      variables: { postId },
     }),
   });
   const json = await response.json();
@@ -42,3 +42,5 @@ export async function loadPost() {
     return postContent;
   }
 }
+
+window.addEventListener("load", loadPost);
