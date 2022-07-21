@@ -89,3 +89,5 @@ const createNewProjectCard = (post: {
   const projectCards = document.querySelector(".projects-section .cards");
   projectCards.appendChild(card);
 };
+
+window.addEventListener("load", loadCards);
