@@ -134,6 +134,7 @@ body {
   width: 100%;
   min-height: 20rem;
   min-width: 22rem;
+  object-fit: cover;
 }
 
 .cards__card-with-image {
