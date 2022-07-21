@@ -8,6 +8,7 @@
   max-height: 30rem;
   width: 100%;
   object-fit: cover;
+  min-height: 28rem;
 }
 
 .post-section__post-subtitle {
@@ -51,12 +52,11 @@
   border-radius: inherit;
 }
 
-
 @media only screen and (max-width: 800px) {
-    .post-section__post-subtitle {
-      flex-direction: column;
-    }
-    .post-section__post-subtitle__date  {
-    margin-top: .5rem;
-    }
+  .post-section__post-subtitle {
+    flex-direction: column;
   }
+  .post-section__post-subtitle__date {
+    margin-top: 0.5rem;
+  }
+}
