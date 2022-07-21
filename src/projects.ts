@@ -15,6 +15,7 @@ export async function getThreePost() {
             posts(limit: 3) {
               id,
               title,
+              description,
               body,
               cover
             }
@@ -37,6 +38,7 @@ export async function loadCards() {
           id: string;
           cover: string;
           title: string;
+          description: string;
           body: string;
         }) => {
           createNewProjectCard(element);
@@ -54,6 +56,7 @@ const createNewProjectCard = (post: {
   id: string;
   cover: string;
   title: string;
+  description: string;
   body: string;
 }) => {
   const card = document.createElement("div");
@@ -69,7 +72,7 @@ const createNewProjectCard = (post: {
 
   const cardDescription = document.createElement("div");
   cardDescription.classList.add("cards__card__description");
-  cardDescription.innerHTML = post.body.slice(0, 10) + "...";
+  cardDescription.innerHTML = post.description;
 
   const learnMore = document.createElement("div");
   learnMore.classList.add("cards__card_learn-more");
