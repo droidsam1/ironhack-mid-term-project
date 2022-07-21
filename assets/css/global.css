@@ -132,11 +132,8 @@ body {
 
 .cards__card__image {
   width: 100%;
-  min-height: 15rem;
-}
-
-.cards__card-with-image {
-  padding: 0;
+  min-height: 20rem;
+  min-width: 22rem;
 }
 
 .cards__card-with-image {
@@ -209,6 +206,10 @@ body {
   }
 
   .cards__card__image {
+    min-height: 0;
+    min-width: 0;
     max-height: 20rem;
+    max-width: 100%;
+    
   }
 }
