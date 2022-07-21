@@ -1,4 +1,4 @@
-import { getThreePost, loadCards } from "../src/projects";
+import { getRandomPosts, loadCards } from "../src/projects";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -50,45 +50,45 @@ global.fetch = jest.fn(() =>
 
 describe("Calling Posts API", () => {
   it("should call API to get posts", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     expect(post).toBeTruthy();
   });
   it("should return an array of post", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     expect(Array.isArray(post)).toBe(true);
   });
   it("should thrown an error if API request fail", async () => {
     (fetch as jest.Mock).mockRejectedValueOnce(
       new Error("Some unexpected error")
     );
-    await expect(getThreePost()).rejects.toThrow();
+    await expect(getRandomPosts()).rejects.toThrow();
   });
 
   it("should return at least three posts", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     expect(post.length).toBeGreaterThanOrEqual(3);
   });
 
   it("a post contains a body", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     const aPost = post[0];
     expect(aPost).toHaveProperty("body");
   });
 
   it("a post contains a title", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     const aPost = post[0];
     expect(aPost).toHaveProperty("title");
   });
 
   it("a post contains a description", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     const aPost = post[0];
     expect(aPost).toHaveProperty("description");
   });
 
   it("a post contains a cover image", async () => {
-    const post = await getThreePost();
+    const post = await getRandomPosts();
     const aPost = post[0];
     expect(aPost).toHaveProperty("cover");
   });

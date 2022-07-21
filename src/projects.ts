@@ -4,7 +4,7 @@ const BASE_URL =
 const GRAPHQL_BASE_URL =
   "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/graphql?";
 
-export async function getThreePost() {
+async function getTenPost() {
   const response = await fetch(GRAPHQL_BASE_URL, {
     method: "POST",
     headers: {
@@ -12,7 +12,7 @@ export async function getThreePost() {
     },
     body: JSON.stringify({
       query: `{
-            posts(limit: 3) {
+            posts(limit: 10) {
               id,
               title,
               description,
@@ -26,9 +26,24 @@ export async function getThreePost() {
   return json.data.posts;
 }
 
+export async function getRandomPosts() {
+  const posts = await getTenPost().catch(() => []);
+  if (posts && posts.length > 0) {
+    shuffleArray(posts);
+    return posts;
+  }
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 export async function loadCards() {
   const MAX_CARDS_TO_LOAD = 3;
-  const newPosts = await getThreePost().catch(() => []);
+  const newPosts = await getRandomPosts().catch(() => []);
   if (newPosts && newPosts.length > 0) {
     cleanProjectCardsSection();
     newPosts
