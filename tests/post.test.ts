@@ -12,6 +12,7 @@ global.fetch = jest.fn(() =>
             cover: "https://picsum.photos/seed/73735/1920/270",
             title: "ipsam",
             description: "a fugiat quia voluptatibus",
+            createdAt: "2013-05-26T13:06:35Z",
           },
         },
       }),
@@ -23,7 +24,8 @@ document.body.innerHTML = `<section class="post-section">
 <h1 class="post-section__post-title h1-heading black">Simplify</h1>
 <div class="post-section__post-subtitle">
     <div class="post-section__post-subtitle__description text-medium secondary-grey">UI Design & App Development</div>
-    <div class="post-section__post-subtitle__date text-regular">Completed on <span class="secondary-grey">June 22, 2021</span></div>
+    <div class="post-section__post-subtitle__date text-regular">Completed on <span
+    class="post-section__post-subtitle__date__value secondary-grey">June 22, 2021</span></div>
 </div>
 <div class="post-section__image">
     <img class="post-section__image__forefront-image" src="/assets/projects-section/1.jpg" alt="image placeholder" />
@@ -113,5 +115,15 @@ describe("Load a post", () => {
     expect(
       document.querySelector(".post-section__image__background-image")
     ).toHaveProperty("src", "https://picsum.photos/seed/73735/1920/270");
+  });
+
+  it("should load the post date", async () => {
+    const aPost = await loadPost();
+
+    expect(aPost).not.toBeNull();
+    expect(
+      document.querySelector(".post-section__post-subtitle__date__value")
+        .innerHTML
+    ).toBe("Sun May 26 2013");
   });
 });

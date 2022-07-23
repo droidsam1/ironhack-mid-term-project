@@ -12,7 +12,6 @@ async function getTenPost() {
               id,
               title,
               description,
-              body,
               cover
             }
           }`,

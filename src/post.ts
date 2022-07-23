@@ -13,7 +13,8 @@ export async function getPostById(postId: number) {
           title
           description
           body
-          cover
+          cover,
+          createdAt
         }
       }`,
       variables: { postId },
@@ -36,12 +37,18 @@ export async function loadPost() {
     ).innerHTML = postContent.description;
     document.querySelector(".post-section__text").innerHTML = postContent.body;
     (
-      document.querySelector(".post-section__image__forefront-image") as HTMLImageElement
+      document.querySelector(
+        ".post-section__image__forefront-image"
+      ) as HTMLImageElement
     ).src = postContent.cover;
-
     (
-      document.querySelector(".post-section__image__background-image") as HTMLImageElement
+      document.querySelector(
+        ".post-section__image__background-image"
+      ) as HTMLImageElement
     ).src = postContent.cover;
+    document.querySelector(
+      ".post-section__post-subtitle__date__value"
+    ).innerHTML = new Date(postContent.createdAt).toDateString();
     return postContent;
   }
 }
