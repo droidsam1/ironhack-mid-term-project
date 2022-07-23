@@ -1,4 +1,5 @@
-import { GRAPHQL_POST_API_BASE_URL } from "./constants";
+const GRAPHQL_POST_API_BASE_URL =
+  "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/graphql?";
 
 export async function getPostById(postId: number) {
   const response = await fetch(GRAPHQL_POST_API_BASE_URL, {
