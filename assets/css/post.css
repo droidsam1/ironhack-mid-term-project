@@ -24,32 +24,21 @@
 /* 
 * Glowing shadow
 */
-.post-section__image:before {
-  content: "";
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-  transform: translate3d(0px, 20px, 0) scale(1);
-  filter: blur(20px);
-  opacity: 0.42;
-  transition: opacity 0.3s;
-  border-radius: inherit;
+.post-section__image__forefront-image{
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
 }
 
-.post-section__image::after {
-  content: "";
-  z-index: -1;
+.post-section__image__background-image{
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: 2px;
   left: 0;
-  background: inherit;
-  border-radius: inherit;
+  transform: scale(1.05);
+  transition: all 0.5s ease;
+  opacity: .4;
+  filter: blur(1.25rem);
+  z-index: 1;
 }
 
 @media only screen and (max-width: 800px) {
