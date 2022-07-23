@@ -1,11 +1,7 @@
-const BASE_URL =
-  "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/posts";
-
-const GRAPHQL_BASE_URL =
-  "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/graphql?";
+import { GRAPHQL_POST_API_BASE_URL } from "./constants";
 
 async function getTenPost() {
-  const response = await fetch(GRAPHQL_BASE_URL, {
+  const response = await fetch(GRAPHQL_POST_API_BASE_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
