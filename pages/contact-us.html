@@ -55,7 +55,8 @@
                 </div>
                 <div class="contat-us-section__phone">
                     <label for="phone" class="capitalize">Phone</label>
-                    <input type="tel" placeholder="Enter your phone number" name="phone" required />
+                    <input type="tel" placeholder="Enter your phone number" name="phone" required
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" />
                 </div>
             </div>
             <label for="message" class="capitalize">Message</label>
@@ -63,6 +64,10 @@
 
             <button class="contat-us-section__submit-button rectangular-main-button" type="submit">Submit</button>
         </form>
+
+        <div class="submitted-message">
+            Thank you! Your submission has been received!
+        </div>
     </section>
 
 
@@ -75,6 +80,9 @@
             <input class="cta-section__mail-input" type="email" placeholder="Enter your email" required />
             <button class="rectangular-main-button cta-section__subscribe-button" type="submit">Subscribe</button>
         </form>
+        <div class="submitted-message">
+            Thank you! Your submission has been received!
+        </div>
     </section>
 
     <section class="footer-section">
