@@ -155,15 +155,15 @@ body {
   margin: 0;
 }
 
-.submitted-message{
+.submitted-message {
   visibility: hidden;
   display: none;
-  
+
   width: 100%;
   box-sizing: border-box;
   padding: 1.5rem;
   background-color: #292e4733;
-  display: flex;
+  display: flex !important;
   justify-content: center;
   align-items: center;
 }
@@ -224,6 +224,5 @@ body {
     min-width: 0;
     max-height: 20rem;
     max-width: 100%;
-    
   }
 }

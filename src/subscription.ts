@@ -18,7 +18,7 @@ export async function subscribe(event?: { preventDefault: () => void }) {
     },
   })
     .then(async (response) => {
-      if (response.status === 200) {
+      if (response.status >= 200 && response.status < 300) {
         hideButton();
         hideInput();
         showSubmissionMessage();
@@ -58,7 +58,7 @@ function showPleaseWaitMessage() {
 
 function showSubmissionMessage() {
   const submissionMessage = document.querySelector(
-    ".submitted-message"
+    ".cta-section .submitted-message"
   ) as HTMLElement;
 
   submissionMessage.style.display = "block";
