@@ -36,7 +36,11 @@ export async function loadPost() {
     ).innerHTML = postContent.description;
     document.querySelector(".post-section__text").innerHTML = postContent.body;
     (
-      document.querySelector(".post-section__image img") as HTMLImageElement
+      document.querySelector(".post-section__image__forefront-image") as HTMLImageElement
+    ).src = postContent.cover;
+
+    (
+      document.querySelector(".post-section__image__background-image") as HTMLImageElement
     ).src = postContent.cover;
     return postContent;
   }

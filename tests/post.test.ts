@@ -26,7 +26,8 @@ document.body.innerHTML = `<section class="post-section">
     <div class="post-section__post-subtitle__date text-regular">Completed on <span class="secondary-grey">June 22, 2021</span></div>
 </div>
 <div class="post-section__image">
-    <img src="/assets/projects-section/1.jpg" alt="image placeholder" />
+    <img class="post-section__image__forefront-image" src="/assets/projects-section/1.jpg" alt="image placeholder" />
+    <img class="post-section__image__background-image" src="/assets/projects-section/1.jpg"/>
 </div>
 
 <div class="post-section__text text-regular">
@@ -106,9 +107,11 @@ describe("Load a post", () => {
     const aPost = await loadPost();
 
     expect(aPost).not.toBeNull();
-    expect(document.querySelector(".post-section__image img")).toHaveProperty(
-      "src",
-      "https://picsum.photos/seed/73735/1920/270"
-    );
+    expect(
+      document.querySelector(".post-section__image__forefront-image")
+    ).toHaveProperty("src", "https://picsum.photos/seed/73735/1920/270");
+    expect(
+      document.querySelector(".post-section__image__background-image")
+    ).toHaveProperty("src", "https://picsum.photos/seed/73735/1920/270");
   });
 });

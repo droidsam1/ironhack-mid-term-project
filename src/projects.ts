@@ -23,7 +23,7 @@ async function getTenPost() {
 }
 
 export async function getRandomPosts() {
-  const posts = await getTenPost().catch(() => []);
+  const posts = await getTenPost();
   if (posts && posts.length > 0) {
     shuffleArray(posts);
     return posts;

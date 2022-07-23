@@ -141,7 +141,7 @@ describe("Loading Project Cards", () => {
     await loadCards();
     expect(
       document.querySelector(".projects-section .cards__card__title").innerHTML
-    ).toBe("ipsam");
+    ).not.toBe("DEFAULT CARD");
   });
 
   it("should load new card body", async () => {
@@ -165,7 +165,7 @@ describe("Loading Project Cards", () => {
       document
         .querySelector(".projects-section .cards__card_learn-more a")
         .getAttribute("href")
-    ).toBe("/post/1");
+    ).toContain("/post/");
   });
 
   it("should load a max of three cards when API call succeed", async () => {
@@ -186,8 +186,8 @@ describe("Loading Project Cards", () => {
     const secondLoadedCard: Element = allLoadedCards[1];
     const thirdLoadedCard: Element = allLoadedCards[2];
 
-    expect(firstLoadedCard.innerHTML).toBe("ipsam");
-    expect(secondLoadedCard.innerHTML).toBe("ipsam2");
-    expect(thirdLoadedCard.innerHTML).toBe("ipsam3");
+    expect(firstLoadedCard.innerHTML).not.toBe("DEFAULT CARD");
+    expect(firstLoadedCard.innerHTML).not.toBe(secondLoadedCard.innerHTML);
+    expect(secondLoadedCard.innerHTML).not.toBe(thirdLoadedCard.innerHTML);
   });
 });
