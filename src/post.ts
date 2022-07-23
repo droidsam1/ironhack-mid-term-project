@@ -29,7 +29,7 @@ export async function loadPost() {
   const postId = parseInt(
     new URLSearchParams(window.location.search).get("id")
   );
-  const postContent = await getPostById(postId).catch(() => []);
+  const postContent = await getPostById(postId);
   if (postContent) {
     document.querySelector(".post-section__post-title").innerHTML =
       postContent.title;
