@@ -28,9 +28,11 @@
   position: relative;
   z-index: 2;
   pointer-events: none;
+  background: transparent url('../spinner/spinner-gif-9.gif') no-repeat scroll center center;
 }
 
 .post-section__image__background-image{
+  background: transparent url('../spinner/spinner-gif-9.gif') no-repeat scroll center center;
   position: absolute;
   top: 2px;
   left: 0;

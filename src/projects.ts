@@ -88,7 +88,7 @@ const createNewProjectCard = (post: {
   const learnMore = document.createElement("div");
   learnMore.classList.add("cards__card_learn-more");
   const learnMoreAnchor = document.createElement("a");
-  learnMoreAnchor.href = `/post/${post.id}`;
+  learnMoreAnchor.href = `/pages/post.html?id=${post.id}`;
   learnMoreAnchor.innerText = "Learn more";
   learnMore.appendChild(learnMoreAnchor);
 
