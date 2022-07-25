@@ -165,7 +165,7 @@ describe("Loading Project Cards", () => {
       document
         .querySelector(".projects-section .cards__card_learn-more a")
         .getAttribute("href")
-    ).toContain("/post/");
+    ).toContain("/pages/post.html?id=");
   });
 
   it("should load a max of three cards when API call succeed", async () => {
