@@ -9,10 +9,10 @@ export async function sendForm(event?: { preventDefault: () => void }) {
 
   showPleaseWaitMessage();
 
-  const fullName = getFullName();
-  const email = getEmail();
-  const phone = getPhone();
-  const message = getMessage();
+  const fullName = getFullName().value;
+  const email = getEmail().value;
+  const phone = getPhone().value;
+  const message = getMessage().value;
 
   await fetch(CONTACT_API_BASE_URL, {
     method: "POST",
@@ -40,23 +40,74 @@ export async function sendForm(event?: { preventDefault: () => void }) {
 }
 
 function validateForm() {
+  removeInvalidWarnings();
   const form = document.querySelector("#contact-us-form") as HTMLFormElement;
   form.checkValidity();
   form.reportValidity();
-  return form.checkValidity();
+  return form.checkValidity() && fieldValidations();
 }
 
-function getFullName(): String {
-  return (document.querySelector('#contact-us-form input[name="full-name"]') as HTMLFormElement).value;
+function fieldValidations(): boolean {
+  let valid: boolean = true;
+  if (!validateNotEmpty(getFullName().value)) {
+    markAsInvalidField(getFullName())
+    valid = false;
+  }
+  if (!validateEmail(getEmail().value)) {
+    markAsInvalidField(getEmail());
+    valid = false;
+  }
+  if (!validatePhone(getPhone().value)) {
+    markAsInvalidField(getPhone())
+    valid = false;
+  }
+  if (!validateNotEmpty(getMessage().value)) {
+    markAsInvalidField(getMessage())
+    valid = false;
+  }
+  return valid;
 }
-function getEmail(): String {
-  return (document.querySelector('#contact-us-form input[name="email"]') as HTMLFormElement).value;
+
+const validatePhone = (phone: String)=>{
+  return String(phone).match(/^(\+34|0034|34)?[6789]\d{8}$/) !==null;
 }
-function getPhone(): String {
-  return (document.querySelector('#contact-us-form input[name="phone"]') as HTMLFormElement).value;
+
+const validateEmail = (email: String): boolean => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    ) !== null;
+};
+
+const validateNotEmpty = (name: String): boolean => {
+  if (name) return true;
 }
-function getMessage(): String {
-  return (document.querySelector('#contact-us-form textarea[name="message"]') as HTMLFormElement).value;
+
+
+function markAsInvalidField(element: HTMLElement) {
+  element.classList.add('invalid-input');
+}
+
+function removeInvalidWarnings() {
+  const formElements = document.querySelectorAll(
+    "#contact-us-form input, #contact-us-form area"
+  ) as NodeListOf<Element>;
+  formElements.forEach((element) => element.classList.remove('invalid-input'));
+}
+
+
+function getFullName(): HTMLFormElement {
+  return (document.querySelector('#contact-us-form input[name="full-name"]') as HTMLFormElement);
+}
+function getEmail(): HTMLFormElement {
+  return (document.querySelector('#contact-us-form input[name="email"]') as HTMLFormElement);
+}
+function getPhone(): HTMLFormElement {
+  return (document.querySelector('#contact-us-form input[name="phone"]') as HTMLFormElement);
+}
+function getMessage(): HTMLFormElement {
+  return (document.querySelector('#contact-us-form textarea[name="message"]') as HTMLFormElement);
 }
 
 

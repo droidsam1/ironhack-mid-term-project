@@ -57,7 +57,7 @@ describe("Contact us form", () => {
     const phone = document.querySelector(
       ".contat-us-section__phone input[name='phone']"
     ) as HTMLInputElement;
-    phone.value = "999999999";
+    phone.value = "688999999";
 
     const message = document.querySelector(
       "#contact-us-form textarea[name='message']"
