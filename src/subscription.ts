@@ -38,11 +38,38 @@ export async function subscribe(event?: { preventDefault: () => void }) {
 }
 
 function validateForm() {
+  removeInvalidWarning();
   const form = document.querySelector(".cta-section__mail") as HTMLFormElement;
   form.checkValidity();
   form.reportValidity();
-  return form.checkValidity();
+  let validForm: boolean = form.checkValidity() && validateEmail(getUserMail());
+  if (!validForm) {
+    markAsInvalidField();
+  }
+  return validForm;
 }
+
+function markAsInvalidField() {
+  const mailInput = document.querySelector(
+    ".cta-section__mail-input"
+  ) as HTMLInputElement;
+  mailInput.classList.add('invalid-input');
+}
+
+function removeInvalidWarning() {
+  const mailInput = document.querySelector(
+    ".cta-section__mail-input"
+  ) as HTMLInputElement;
+  mailInput.classList.remove('invalid-input');
+}
+
+const validateEmail = (email): boolean => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    ) !== null;
+};
 
 function getUserMail(): String {
   const subscribeButton = document.querySelector(
@@ -63,9 +90,7 @@ function showSubmissionMessage() {
   const submissionMessage = document.querySelector(
     ".cta-section .submitted-message"
   ) as HTMLElement;
-
-  submissionMessage.style.display = "block";
-  submissionMessage.style.visibility = "visible";
+  submissionMessage.classList.toggle('fade');
 }
 
 function hideButton() {

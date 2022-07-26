@@ -31,7 +31,7 @@ document.body.innerHTML = `<section id="contat-us-section" class="contat-us-sect
     <button class="contat-us-section__submit-button rectangular-main-button" type="submit">Submit</button>
 </form>
 
-<div class="submitted-message">
+<div class="submitted-message fade">
     Thank you! Your submission has been received!
 </div>
 </section>`;
@@ -87,7 +87,6 @@ describe("Contact us form", () => {
 
     await sendForm();
 
-    expect(form.style).toHaveProperty("visibility", "hidden");
     expect(form.style).toHaveProperty("display", "none");
   });
 
@@ -99,7 +98,6 @@ describe("Contact us form", () => {
 
     await sendForm();
 
-    expect(submissionMessage.style).toHaveProperty("display", "block");
-    expect(submissionMessage.style).toHaveProperty("visibility", "visible");
+    expect(submissionMessage.classList).toContain('fade');
   });
 });

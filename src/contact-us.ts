@@ -72,9 +72,7 @@ function showSubmissionMessage() {
   const submissionMessage = document.querySelector(
     ".contat-us-section .submitted-message"
   ) as HTMLElement;
-
-  submissionMessage.style.display = "block";
-  submissionMessage.style.visibility = "visible";
+  submissionMessage.classList.toggle('fade');
 }
 
 

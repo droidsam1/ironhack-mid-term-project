@@ -58,7 +58,6 @@ describe("Subscription", () => {
 
     await subscribe();
 
-    expect(subscribeButton.style).toHaveProperty("visibility", "hidden");
     expect(subscribeButton.style).toHaveProperty("display", "none");
   });
 
@@ -73,7 +72,6 @@ describe("Subscription", () => {
 
     await subscribe();
 
-    expect(subscribeInput.style).toHaveProperty("visibility", "hidden");
     expect(subscribeInput.style).toHaveProperty("display", "none");
   });
 
@@ -88,7 +86,6 @@ describe("Subscription", () => {
 
     await subscribe();
 
-    expect(submissionMessage.style).toHaveProperty("display", "block");
-    expect(submissionMessage.style).toHaveProperty("visibility", "visible");
+    expect(submissionMessage.classList).toContain('fade');
   });
 });
