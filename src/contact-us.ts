@@ -1,3 +1,5 @@
+const CONTACT_API_BASE_URL = "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/questions";
+
 export async function sendForm(event?: { preventDefault: () => void }) {
   event?.preventDefault();
 
@@ -12,7 +14,7 @@ export async function sendForm(event?: { preventDefault: () => void }) {
   const phone = getPhone();
   const message = getMessage();
 
-  await fetch("https://jsonplaceholder.typicode.com/users", {
+  await fetch(CONTACT_API_BASE_URL, {
     method: "POST",
     body: JSON.stringify({
       fullName, email, phone, message
@@ -45,16 +47,16 @@ function validateForm() {
 }
 
 function getFullName(): String {
-  return document.querySelector('#contact-us-form')[0].value;
+  return (document.querySelector('#contact-us-form input[name="full-name"]') as HTMLFormElement).value;
 }
 function getEmail(): String {
-  return document.querySelector('#contact-us-form')[1].value;
+  return (document.querySelector('#contact-us-form input[name="email"]') as HTMLFormElement).value;
 }
 function getPhone(): String {
-  return document.querySelector('#contact-us-form')[2].value;
+  return (document.querySelector('#contact-us-form input[name="phone"]') as HTMLFormElement).value;
 }
 function getMessage(): String {
-  return document.querySelector('#contact-us-form')[3].value;
+  return (document.querySelector('#contact-us-form textarea[name="message"]') as HTMLFormElement).value;
 }
 
 

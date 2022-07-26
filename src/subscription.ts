@@ -1,3 +1,6 @@
+const SUBSCRIBE_API_BASE_URL = "https://mockend.com/droidsam1/ironhack-mid-term-project-mockend/subscriptions";
+
+
 export async function subscribe(event?: { preventDefault: () => void }) {
   event?.preventDefault();
 
@@ -8,7 +11,7 @@ export async function subscribe(event?: { preventDefault: () => void }) {
   showPleaseWaitMessage();
 
   const userMail = getUserMail();
-  await fetch("https://jsonplaceholder.typicode.com/posts", {
+  await fetch(SUBSCRIBE_API_BASE_URL, {
     method: "POST",
     body: JSON.stringify({
       mail: userMail,
