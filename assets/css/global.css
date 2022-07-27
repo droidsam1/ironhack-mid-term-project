@@ -133,8 +133,8 @@ body {
 .cards__card__image {
   background: transparent url('../spinner/spinner-gif-9.gif') no-repeat scroll center center;
   width: 100%;
-  min-height: 20rem;
   min-width: 22rem;
+  height: 20rem;
   object-fit: cover;
 }
 
