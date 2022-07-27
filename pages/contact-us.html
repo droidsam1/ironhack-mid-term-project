@@ -24,6 +24,7 @@
         <script>var exports = {};</script>
         <script type="module" src="/out/src/subscription.js"></script>
         <script type="module" src="/out/src/contact-us.js"></script>
+        <script type="module" src="/out/src/burguer-menu.js"></script>
         <title>Circle Agency</title>
     </head>
 </head>
@@ -35,14 +36,16 @@
         <div id="navbar__menu">
             <ul class="navbar__list">
                 <li class="heading-h4"><a class="navbar__list__link" href="../index.html">Home</a></li>
-                <li class="heading-h4"><a class="navbar__list__link active" href="../index.html#projects">Projects</a>
+                <li class="heading-h4"><a class="navbar__list__link" href="../index.html#projects">Projects</a>
                 </li>
                 <li class="heading-h4"><a class="navbar__list__link" href="../index.html#services">Services</a></li>
+                <li class="heading-h4"><a class="navbar__list__link active" href="#">Contact us</a></li>
             </ul>
         </div>
         <div id="contat-us">
             <a href="/pages/contact-us.html" class="rectangular-main-button capitalize">Contact us</a>
         </div>
+        <div id="navbar__menu__icon"></div>
     </nav>
 
 
@@ -79,7 +82,7 @@
         </div>
         <div class="text-regular main-grey">Let us help you!</div>
         <form class="cta-section__mail">
-            <input class="cta-section__mail-input" type="email" placeholder="Enter your email" required />
+            <input class="cta-section__mail-input error" type="email" placeholder="Enter your email" required />
             <button class="rectangular-main-button cta-section__subscribe-button" type="submit">Subscribe</button>
         </form>
         <div class="submitted-message">

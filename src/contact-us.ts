@@ -24,7 +24,7 @@ export async function sendForm(event?: { preventDefault: () => void }) {
     },
   })
     .then(async (response) => {
-      if (response.status >= 200 && response.status < 300) {
+      if (response.status === 201) {
         hideForm();
         showSubmissionMessage();
       } else {

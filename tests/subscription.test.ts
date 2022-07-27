@@ -2,8 +2,8 @@ import { subscribe } from "../src/subscription";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    status: 200,
-    json: () =>
+    status: 201,
+      json: () =>
       Promise.resolve({
         data: {},
       }),

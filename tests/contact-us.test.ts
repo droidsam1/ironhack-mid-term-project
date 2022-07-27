@@ -2,7 +2,7 @@ import { sendForm } from "../src/contact-us";
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
-    status: 200,
+    status: 201,
     json: () =>
       Promise.resolve({
         data: {},
