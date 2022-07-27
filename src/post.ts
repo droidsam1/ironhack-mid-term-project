@@ -15,6 +15,7 @@ export async function getPostById(postId: number) {
           description
           body
           cover,
+          coverDescription,
           createdAt
         }
       }`,
@@ -31,27 +32,45 @@ export async function loadPost() {
   );
   const postContent = await getPostById(postId);
   if (postContent) {
-    document.querySelector(".post-section__post-title").innerHTML =
-      postContent.title;
-    document.querySelector(
-      ".post-section__post-subtitle__description"
-    ).innerHTML = postContent.description;
-    document.querySelector(".post-section__text").innerHTML = postContent.body;
-    (
-      document.querySelector(
-        ".post-section__image__forefront-image"
-      ) as HTMLImageElement
-    ).src = postContent.cover;
-    (
-      document.querySelector(
-        ".post-section__image__background-image"
-      ) as HTMLImageElement
-    ).src = postContent.cover;
-    document.querySelector(
-      ".post-section__post-subtitle__date__value"
-    ).innerHTML = new Date(postContent.createdAt).toDateString();
+    setTitle(postContent.title);
+    setDescription(postContent.description);
+    setBody(postContent.body);
+    setCover(postContent.cover, postContent.coverDescription);
+    setCreationDate(new Date(postContent.createdAt));
     return postContent;
   }
+}
+
+const setTitle = (title: string) => {
+  document.querySelector(".post-section__post-title").innerHTML = title;
+}
+const setDescription = (description: string) => {
+  document.querySelector(
+    ".post-section__post-subtitle__description"
+  ).innerHTML = description;
+}
+const setBody = (body: string) => {
+  document.querySelector(".post-section__text").innerHTML = body;
+}
+const setCover = (coverImage: string, coverDescription: string) => {
+  const foreFrontImage = document.querySelector(
+    ".post-section__image__forefront-image"
+  ) as HTMLImageElement
+  foreFrontImage.src = coverImage;
+  foreFrontImage.alt = coverDescription;
+
+  const backgroundImage = document.querySelector(
+    ".post-section__image__background-image"
+  ) as HTMLImageElement
+
+  backgroundImage.src = coverImage;
+  backgroundImage.alt = coverDescription;
+}
+
+const setCreationDate = (date: Date) => {
+  document.querySelector(
+    ".post-section__post-subtitle__date__value"
+  ).innerHTML = date.toDateString();
 }
 
 window.addEventListener("load", loadPost);

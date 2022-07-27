@@ -13,7 +13,8 @@ async function getTenPost() {
               id,
               title,
               description,
-              cover
+              cover,
+              coverDescription
             }
           }`,
     }),
@@ -46,11 +47,11 @@ export async function loadCards() {
       .slice(0, MAX_CARDS_TO_LOAD)
       .forEach(
         (element: {
-          id: string;
-          cover: string;
-          title: string;
-          description: string;
-          body: string;
+          'id': string;
+          'cover': string;
+          'coverDescription': string;
+          'title': string;
+          'description': string;
         }) => {
           createNewProjectCard(element);
         }
@@ -64,11 +65,11 @@ const cleanProjectCardsSection = () => {
 };
 
 const createNewProjectCard = (post: {
-  id: string;
-  cover: string;
-  title: string;
-  description: string;
-  body: string;
+  'id': string;
+  'cover': string;
+  'coverDescription': string;
+  'title': string;
+  'description': string;
 }) => {
   const card = document.createElement("div");
   card.classList.add("cards__card", "cards__card-with-image");
@@ -76,6 +77,7 @@ const createNewProjectCard = (post: {
   const image = document.createElement("img");
   image.classList.add("cards__card__image");
   image.src = post.cover;
+  image.alt = post["coverDescription"];
 
   const cardTitle = document.createElement("h5");
   cardTitle.classList.add("cards__card__title", "capitalize");
