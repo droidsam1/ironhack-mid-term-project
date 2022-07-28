@@ -18,6 +18,10 @@
     <a href="https://droidsam-circle-app.netlify.app/index.html">View a deployed demo</a>
     ·
     <a href="https://www.canva.com/design/DAFHoF5k5gg/d2Ag1qcCEAznSQaPZDSLhg/view?utm_content=DAFHoF5k5gg&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink">View the presentation</a>
+    ·
+    <a href="https://github.com/droidsam1/ironhack-mid-term-project-mockend">View the mockend (mock back-end)</a>
+  
+  
   </p>
 </div>
 
